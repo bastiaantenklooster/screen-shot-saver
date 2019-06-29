@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3", "S3\S3.csproj", "{DDDF5044-5FF2-4C61-8B5A-44BB8D8A55DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S3.Keyboard", "S3.Keyboard\S3.Keyboard.csproj", "{3D8E170C-ACC3-47E4-8C82-BF39BCCEA30D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3.ScreenCapture", "S3.ScreenCapture\S3.ScreenCapture.csproj", "{32908CC1-3B30-4655-861A-4F3961A0ED17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDDF5044-5FF2-4C61-8B5A-44BB8D8A55DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDDF5044-5FF2-4C61-8B5A-44BB8D8A55DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDDF5044-5FF2-4C61-8B5A-44BB8D8A55DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDDF5044-5FF2-4C61-8B5A-44BB8D8A55DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8E170C-ACC3-47E4-8C82-BF39BCCEA30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8E170C-ACC3-47E4-8C82-BF39BCCEA30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8E170C-ACC3-47E4-8C82-BF39BCCEA30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8E170C-ACC3-47E4-8C82-BF39BCCEA30D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32908CC1-3B30-4655-861A-4F3961A0ED17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32908CC1-3B30-4655-861A-4F3961A0ED17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32908CC1-3B30-4655-861A-4F3961A0ED17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32908CC1-3B30-4655-861A-4F3961A0ED17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18BD6439-D595-4300-9F0C-5D09087D80F6}
+	EndGlobalSection
+EndGlobal

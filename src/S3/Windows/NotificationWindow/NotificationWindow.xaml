@@ -1,0 +1,58 @@
+﻿<Window x:Class="S3.Windows.NotificationWindow.NotificationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:resx="clr-namespace:S3.Properties"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None" 
+        AllowsTransparency="True" 
+        ShowInTaskbar="False"
+        Background="Transparent"
+        Loaded="Window_Loaded"
+        Topmost="True"
+        Cursor="Hand"
+        Title="NotificationWindow">
+
+    <Grid RenderTransformOrigin="0,1" Margin="8">
+
+        <!-- Notification area -->
+        <Border BorderThickness="1" SnapsToDevicePixels="True" Background="White" BorderBrush="#FF888888" Padding="4">
+            <Button Command="{Binding ShowFileCommand, Mode=OneWay}" Foreground="#FF444444">
+                <TextBlock>
+                        <Run Text="{x:Static resx:Resources.SavedNotification}"/>
+                        <Run Text="{Binding SavedFile.Name, Mode=OneWay}"/>.
+                </TextBlock>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Border>
+
+        <!-- Animation -->
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                    <Storyboard Completed="FadeOutComplete">
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)">
+                            <SplineDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+                            <SplineDoubleKeyFrame KeyTime="0:0:3.25" Value="0"/>
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+
+        <Grid.RenderTransform>
+            <ScaleTransform ScaleY="1" />
+        </Grid.RenderTransform>
+
+    </Grid>
+
+</Window>
