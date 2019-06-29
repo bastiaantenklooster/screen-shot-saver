@@ -41,14 +41,16 @@ namespace S3
         private void HandlePrintScreen()
         {
             var sc = new ScreenCapture.ScreenCapture();
-            var file = GetUniqueFileName($"{ Resources.Filename.ToString() } ({{0}}).jpg");
+            var file = GetUniqueFile($"{ Resources.Filename.ToString() } ({{0}}).jpg");
+
+            Directory.CreateDirectory(file.DirectoryName);
 
             sc.CaptureScreenToFile(file.FullName, ImageFormat.Png);
 
             Saved?.Invoke(this, new ScreenshotSavedEventArgs(file));
         }
 
-        private FileInfo GetUniqueFileName(string fileNameTemplate)
+        private FileInfo GetUniqueFile(string fileNameTemplate)
         {
             string filename;
 
