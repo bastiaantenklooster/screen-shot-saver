@@ -17,6 +17,8 @@ namespace S3
 
         protected GlobalKeyboardHook KeyboardHook { get; }
 
+        public event EventHandler BeforePrintScreen;
+
         public event EventHandler<ScreenshotSavedEventArgs> Saved;
 
         public Screenshot(DirectoryInfo storageDirectory)
@@ -44,6 +46,8 @@ namespace S3
             var file = GetUniqueFile($"{ Resources.Filename.ToString() } ({{0}}).jpg");
 
             Directory.CreateDirectory(file.DirectoryName);
+
+            BeforePrintScreen.Invoke(this, EventArgs.Empty);
 
             sc.CaptureScreenToFile(file.FullName, ImageFormat.Png);
 

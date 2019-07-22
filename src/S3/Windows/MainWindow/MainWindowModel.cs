@@ -18,7 +18,9 @@ namespace S3.Windows.MainWindow
 
         public ICommand ShowExplorerCommand { get; }
 
-        public MainWindowModel()
+        private MainWindow Window { get; }
+
+        public MainWindowModel(MainWindow window)
         {
             Directory = new DirectoryInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), Resources.Directory));
 
@@ -27,6 +29,15 @@ namespace S3.Windows.MainWindow
             ShowExplorerCommand = new ShowExplorerCommand(Directory);
 
             Screenshot = new Screenshot(Directory);
+
+            Screenshot.BeforePrintScreen += Screenshot_BeforePrintScreen;
+
+            Window = window;
+        }
+
+        private void Screenshot_BeforePrintScreen(object sender, EventArgs e)
+        {
+            Window.HideNotifications();
         }
 
         #region IDisposable Support
